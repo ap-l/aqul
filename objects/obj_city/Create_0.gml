@@ -3,3 +3,4 @@
 randomize()
 cname = scr_namegen(irandom(2)+2)
 alarm[0] = 200
+br = true

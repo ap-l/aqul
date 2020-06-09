@@ -13,4 +13,4 @@ spd = 0.25
 //alarm[0] = 10
 path = path_add()
 mp_grid_path(global.lnd,path,x,y,sx,sy,false)
-path_start(path,0.25,path_action_stop,false)
+path_start(path,0.25,path_action_stop,true)

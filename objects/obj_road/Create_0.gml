@@ -7,6 +7,6 @@ if collision_rectangle_list(x-8,y-8,x+8,y+8,obj_city,false,true,spr,false) > 2
 }
 else if ds_list_size(spr) == 2
 {
-	r1 = ds_list_find_value(spr,1)
-	r2 = ds_list_find_value(spr,2)
+	//r1 = ds_list_find_value(spr,1)
+	//r2 = ds_list_find_value(spr,2)
 }
