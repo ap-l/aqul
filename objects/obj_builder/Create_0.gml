@@ -5,7 +5,8 @@
 	grid = mp_grid_create(min(x,ncity.x),min(y,ncity.y),abs(x-ncity.x),abs(y-ncity.y),8,8)
 	mp_grid_add_instances(grid,obj_water,false)
 	mp_grid_add_instances(grid,obj_mountain,false)
-	mp_grid_path(grid,path,x,y,ncity.x,ncity.x,false)
+	var t = mp_grid_path(grid,path,x,y,ncity.x,ncity.y,false)
+	show_debug_message(t)
 	alarm[0] = 200
 	var inc = 1 / (path_get_length(path));
 	var pos = 0;
@@ -21,6 +22,9 @@
 	  if (!collision_point(px, py, obj_road, 0, 0)) 
 	  {
 	    instance_create_depth(px, py,-1, obj_road);
+		show_debug_message(pos)
+		show_debug_message(path_get_length(path))
+		show_debug_message(inc)
 	  }
 	  pos += inc;
 	}
