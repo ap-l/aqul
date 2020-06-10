@@ -1,8 +1,17 @@
 /// @description Insert description here
 // You can write your code in this editor
+nx = 10*x
+ny = 10*y
 	for(var i = instance_number(obj_city); i>0; i--)
 	{
-		
+		cities[i] = instance_find(obj_city,i)
+		if cities[i].x != x || cities[i].y != y
+		{
+			if cities[i].x < abs(x+nx)
+			{
+				ncity = cities[i]	
+			}
+		}
 	}
 	//ncity = instance_furthest(x,y,obj_city)
 	if ds_list_find_index(global.roadlist,instance_nearest(x,y,obj_city).cname + ncity.cname) == -1
