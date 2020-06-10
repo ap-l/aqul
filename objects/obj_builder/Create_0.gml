@@ -1,6 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
-	ncity = instance_furthest(x,y,obj_city)
+	for(var i = instance_number(obj_city); i>0; i--)
+	{
+		
+	}
+	//ncity = instance_furthest(x,y,obj_city)
 	if ds_list_find_index(global.roadlist,instance_nearest(x,y,obj_city).cname + ncity.cname) == -1
 	{
 		ds_list_add(global.roadlist,instance_nearest(x,y,obj_city).cname + ncity.cname)
