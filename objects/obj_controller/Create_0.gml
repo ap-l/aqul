@@ -4,6 +4,7 @@ randomize()
 rot = 0;
 audio_play_sound(snd_gns,1,true)
 global.gridsz = 8
+global.roadlist = ds_list_create()
 global.lnd = mp_grid_create(0,0,128,96,8,8)
 mp_grid_add_instances(global.lnd,obj_water,false)
 mp_grid_add_instances(global.lnd,obj_mountain,false)
