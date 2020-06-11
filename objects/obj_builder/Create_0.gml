@@ -2,13 +2,16 @@
 // You can write your code in this editor
 nx = 10*x
 ny = 10*y
-	for(var i = instance_number(obj_city); i>0; i--)
+	for(var i = 0; i < instance_number(obj_city); i++)
 	{
 		cities[i] = instance_find(obj_city,i)
+		show_debug_message(cities[i])
 		if cities[i].x != x || cities[i].y != y
 		{
-			if cities[i].x < abs(x+nx)
+			if cities[i].x < abs(x+nx) && cities[i].y < abs(y+ny)
 			{
+				//nx = cities[i].x
+				//ny = cities[i].y
 				ncity = cities[i]	
 			}
 		}
@@ -21,8 +24,7 @@ ny = 10*y
 		grid = mp_grid_create(min(x,ncity.x),min(y,ncity.y),abs(x-ncity.x) / global.gridsz + 1,abs(y-ncity.y) / global.gridsz + 1,global.gridsz,global.gridsz)
 		mp_grid_add_instances(grid,obj_water,false)
 		//mp_grid_add_instances(grid,obj_mountain,false)
-		var t = mp_grid_path(grid,path,x,y,ncity.x,ncity.y,false)
-		show_debug_message(t)
+		mp_grid_path(grid,path,x,y,ncity.x,ncity.y,false)
 		alarm[0] = 200
 		var inc = 1 / (path_get_length(path));
 		var pos = 0;
@@ -38,9 +40,6 @@ ny = 10*y
 		  if (!collision_point(px, py, obj_road, 0, 0)) 
 		  {
 		    instance_create_depth(px, py,-1, obj_road);
-			show_debug_message(pos)
-			show_debug_message(path_get_length(path))
-			show_debug_message(inc)
 		  }
 		  pos += inc;
 		}
