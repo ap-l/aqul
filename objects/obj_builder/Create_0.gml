@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-nx = 10*x
-ny = 10*y
+nx = room_width;
+ny = room_height;
 	for(var i = 0; i < instance_number(obj_city); i++)
 	{
 		cities[i] = instance_find(obj_city,i)
@@ -10,8 +10,8 @@ ny = 10*y
 		{
 			if cities[i].x < abs(x+nx) && cities[i].y < abs(y+ny)
 			{
-				//nx = cities[i].x
-				//ny = cities[i].y
+				nx = cities[i].x
+				ny = cities[i].y
 				ncity = cities[i]	
 			}
 		}

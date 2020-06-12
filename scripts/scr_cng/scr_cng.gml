@@ -1,33 +1,120 @@
 l = argument0
 name = "";
 oe = true
-for(var i = round(l/2);i>0;i--)
+randomize()
+switch(l)
 {
-	randomize()
-	if oe == true
+	case 3:
 	{
-		name += choose("do", "mi", "pa", "te", "ro", "wea", "ly", "e", "ni", "ho", "nie", "rue", "tai")
-		oe = !oe
+		name += choose("d", "m", "p", "t", "r", "w", "l", "e", "n", "h", "b", "g", "k")
+		name += choose("o", "i", "a", "e", "u")
+		name += choose("d", "m", "p", "t", "r", "j", "n", "x", "b", "g", "k")
+		break;
 	}
-	else if oe == false
+	case 4:
 	{
-		name += choose("ny", "le", "lo", "ra", "ry", "dy", "si", "po", "mu", "noe")
-		oe = !oe
+		name += choose("d", "m", "p", "t", "r", "w", "l", "e", "n", "h", "b", "g", "k")
+		name += choose("o", "i", "a", "e", "u")
+		name += choose("d", "m", "s", "y", "r", "w", "l", "n", "h", "v", "j", "k")
+		name += choose("o", "i", "a", "e", "u")
+		break;
+	}
+	case 5:
+	{
+		var t1 = choose("o", "i", "a", "e", "u")
+		var t2 = choose("d", "m", "s", "y", "r", "w", "l", "n", "h", "v", "j", "k")
+		
+		name += choose("d", "m", "p", "t", "r", "w", "l", "e", "n", "h", "b", "g", "k")
+		var tnm = choose(t1,t2,t2)
+		name += tnm
+		if tnm == t1
+		{
+			name += t2	
+			name += t2	
+		}
+		else
+		{
+			var tnm = choose(t1,t2)
+			name += tnm
+			if tnm == t1
+			{
+				name += t2	
+			}
+			else
+			{
+				name += t1	
+			}
+		}
+		name += choose("d", "m", "p", "t", "r", "j", "n", "x", "b", "g", "k")
+		break;
 	}
 }
 name += " "
-for(var i = l;i>0;i--)
+l++
+l++
+switch(l)
 {
-	randomize()
-	if oe == true
+	case 3:
 	{
-		name += choose("ana", "le", "po", "thu", "fy", "wo", "boa", "elo", "le", "ph", "n", "tr", "t")
-		oe = !oe
+		name += choose("d", "m", "p", "t", "r", "w", "l", "e", "n", "h", "b", "g", "k")
+		name += choose("o", "i", "a", "e", "u")
+		name += choose("d", "m", "p", "t", "r", "j", "n", "x", "b", "g", "k")
+		break;
 	}
-	else if oe == false
+	case 4:
 	{
-		name += choose("di", "ni", "lo", "ba", "ra", "doro", "n", "ro", "mie", "ga")
-		oe = !oe
+		name += choose("d", "m", "p", "t", "r", "w", "l", "e", "n", "h", "b", "g", "k")
+		name += choose("o", "i", "a", "e", "u")
+		name += choose("d", "m", "s", "y", "r", "w", "l", "n", "h", "v", "j", "k")
+		name += choose("o", "i", "a", "e", "u")
+		break;
+	}
+	case 5:
+	{
+		var t1 = choose("o", "i", "a", "e", "u")
+		var t2 = choose("d", "m", "s", "y", "r", "w", "l", "n", "h", "v", "j", "k")
+		var t3 = choose(choose("d", "m", "s", "y", "r", "w", "l", "n", "h", "v", "j", "k"),choose("o", "i", "a", "e", "u"))
+		
+		name += choose("d", "m", "p", "t", "r", "w", "l", "e", "n", "h", "b", "g", "k")
+		var tnm = choose(t1,t2,t3)
+		name += tnm
+		if tnm == t1
+		{
+			name += t2	
+			name += t3	
+		}
+		else
+		{
+			var tnm = choose(t1,t3)
+			name += tnm
+			if tnm == t1
+			{
+				name += t3	
+			}
+			else
+			{
+				name += t1	
+			}
+		}
+		name += choose("d", "m", "p", "t", "r", "j", "n", "x", "b", "g", "k")
+		break;
+	}
+	default:
+	{
+		for(var i = l;i>0;i--)
+		{
+			randomize()
+			if oe == true
+			{
+				name += choose("an", "le", "po", "th", "fy", "wo", "bo", "el", "le", "ph", "na", "tr", "ty")
+				oe = !oe
+			}
+			else if oe == false
+			{
+				name += choose("di", "ni", "lo", "ba", "ra", "do", "nu", "ro", "mi", "ga")
+				oe = !oe
+			}
+		}
 	}
 }
 return(name)
